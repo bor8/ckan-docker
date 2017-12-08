@@ -13,6 +13,9 @@ while [ $? -gt 0 ]; do
 done
 cd /src/ckan && paster db init -c /etc/ckan/default/default.ini
 paster --plugin=ckanext-harvest harvester initdb --config=/etc/ckan/default/default.ini
+# 2017-12-07. Ob Rzwo:
+paster --plugin=ckanext-dcatde dcatde_themeadder --config=/etc/ckan/default/default.ini
+
 
 echo "starting server"
 
